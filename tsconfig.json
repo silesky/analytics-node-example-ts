@@ -12,6 +12,7 @@
   ],
   "compilerOptions": {
     "strict": true,
+    "noEmit": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noUnusedLocals": true,
@@ -19,7 +20,8 @@
     "resolveJsonModule": true,
     "module": "esnext",
     "target": "ES5",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
+    "downlevelIteration": true,
     "lib": [
       "DOM",
       "DOM.Iterable",
