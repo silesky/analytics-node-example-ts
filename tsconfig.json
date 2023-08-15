@@ -23,8 +23,6 @@
     "moduleResolution": "nodenext",
     "downlevelIteration": true,
     "lib": [
-      "DOM",
-      "DOM.Iterable",
       "ES2020"
     ]
   }

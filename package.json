@@ -4,15 +4,18 @@
   "description": "",
   "main": "dist/cjs/index.js",
   "scripts": {
-    "test": "ts-node src/basic-test.ts"
+    "test": "ts-node src/basic-test.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/cjs/index.js"
   },
   "engines": {
-    "node": ">=14"
+    "npm": "use-yarn",
+    "node": ">=16"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@segment/analytics-node": "^1.0.0-beta.25",
+    "@segment/analytics-node": "latest",
     "typescript": "^4.8.4"
   },
   "packageManager": "yarn@3.2.4",

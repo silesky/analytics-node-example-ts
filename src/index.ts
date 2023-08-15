@@ -1,16 +1,18 @@
 import { Analytics } from '@segment/analytics-node'
+import type { Plugin } from '@segment/analytics-node'
 
 const analytics = new Analytics({
   writeKey: 'DjTUVRhleGaZX31JQpj6XIAaprCIb25W',
   maxEventsInBatch: 1,
-}).on('error', console.error)
+})
+analytics.on('error', console.error)
+analytics.on('http_request', (req) => console.log('http request', req))
 
-import type { Plugin } from '@segment/analytics-node'
 
-export const lowercase: Plugin = {
+export const ExamplePlugin: Plugin = {
   name: 'Lowercase events',
   type: 'enrichment',
-  version: '1.0.0',
+  version: '0.0.0',
   isLoaded: () => true,
   load: () => Promise.resolve(),
   track: (ctx) => {
@@ -19,7 +21,7 @@ export const lowercase: Plugin = {
   },
 }
 
-analytics.register(lowercase)
+analytics.register(ExamplePlugin)
 
 analytics.track({userId: "foo", event: "bar"})
 
