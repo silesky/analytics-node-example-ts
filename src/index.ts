@@ -10,7 +10,7 @@ const analytics = new Analytics({
   maxEventsInBatch: 1,
 })
 analytics.on('error', console.error)
-analytics.on('http_request', (req) => console.log('http request', req))
+analytics.on('http_request', (req) => console.log('http request:', JSON.stringify(req, undefined, 2)))
 
 
 export const ExamplePlugin: Plugin = {
