@@ -1,8 +1,12 @@
 import { Analytics } from '@segment/analytics-node'
 import type { Plugin } from '@segment/analytics-node'
 
+if (!process.env.WRITEKEY) {
+  throw new Error('Missing WRITEKEY environment variable. \n e.g: export or do WRITEKEY=xxx yarn test')
+}
+
 const analytics = new Analytics({
-  writeKey: 'DjTUVRhleGaZX31JQpj6XIAaprCIb25W',
+  writeKey: process.env.WRITEKEY!,
   maxEventsInBatch: 1,
 })
 analytics.on('error', console.error)
