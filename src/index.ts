@@ -2,7 +2,7 @@ import { Analytics } from '@segment/analytics-node'
 import type { Plugin } from '@segment/analytics-node'
 
 if (!process.env.WRITEKEY) {
-  throw new Error('Missing WRITEKEY environment variable. \n e.g: export or do WRITEKEY=xxx yarn test')
+  throw new Error('Missing WRITEKEY environment variable. Check the REAMDE for more information.')
 }
 
 const analytics = new Analytics({
