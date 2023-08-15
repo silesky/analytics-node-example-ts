@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/cjs/index.js",
   "scripts": {
-    "test": "ts-node src/basic-test.ts",
+    "test": "ts-node src/index.ts",
     "build": "tsc -p tsconfig.build.json",
     "start": "node dist/cjs/index.js"
   },
