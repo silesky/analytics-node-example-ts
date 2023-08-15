@@ -4,6 +4,7 @@ This is a template for a "fresh" node typescript project that uses the @segment/
 ## Setup
 ```
 nvm use && yarn install
+export WRITEKEY=<YOUR_WRITEKEY>
 yarn test
 ```
 # To install the linked version from the analytics-next repo
