@@ -1,3 +1,6 @@
+# @segment/analytics-node example project
+This is a template for a "fresh" node typescript project that uses the @segment/analytics-node package.
+
 ## Setup
 ```
 nvm use && yarn install
