@@ -2,7 +2,9 @@ import { Analytics } from '@segment/analytics-node'
 import type { Plugin } from '@segment/analytics-node'
 
 if (!process.env.WRITEKEY) {
-  throw new Error('Missing WRITEKEY environment variable. Check the README for instructions.')
+  throw new Error(
+    'Missing WRITEKEY environment variable. Check the README for instructions.'
+  )
 }
 
 const analytics = new Analytics({
@@ -10,8 +12,9 @@ const analytics = new Analytics({
   maxEventsInBatch: 1,
 })
 analytics.on('error', console.error)
-analytics.on('http_request', (req) => console.log('http request:', JSON.stringify(req, undefined, 2)))
-
+analytics.on('http_request', (req) =>
+  console.log('http request:', JSON.stringify(req, undefined, 2))
+)
 
 export const ExamplePlugin: Plugin = {
   name: 'Lowercase events',
@@ -27,6 +30,6 @@ export const ExamplePlugin: Plugin = {
 
 analytics.register(ExamplePlugin)
 
-analytics.track({userId: "foo", event: "bar"})
+analytics.track({ userId: 'foo', event: 'bar' })
 
-console.log("Test!")
+console.log('Test!')
